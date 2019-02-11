@@ -8,7 +8,11 @@ gpio.setmode(gpio.BCM)
 
 gpio.setup(led1,gpio.OUT)
 
+def luzPrendida():
+    gpio.output(led1,True)
 
+def luzApagada():
+    gpio.output(led1,False)
     
 
 while True:
