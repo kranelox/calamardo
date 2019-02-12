@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
-import luces 
+from flask import jsonify
+import luces
 import pepite_sensor
 
 app = Flask(__name__)
@@ -12,7 +13,7 @@ def inicio():
 def encederLuces():
     luces.luzPrendida()
     return render_template("plantilladecontrol.html")
-    
+
 @app.route('/lucesOff')
 def apagarLuces():
     luces.luzApagada()
@@ -20,5 +21,6 @@ def apagarLuces():
 
 @app.route('/temperatura')
 def tempe_hum():
-    valores = pepite_sensor.sens_temp_hum()
-    return render_template ("plantilladecontrol.html", datos=valores)
+    temp, hum = pepite_sensor.sens_temp_hum() #se cambia las variables para separar los valores del sensor
+    valores = {"temperatura":temp, "humedad":hum} #se crea diccionario con los valores del sensor
+    return jsonify(valores) #se utiliza la función jsonify de flask
