@@ -2,11 +2,11 @@
 <html>
   <head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Duru Sans' rel='stylesheet'>
     <title>Panel de Control: IoT</title>
-    
+
     <style>
 body {
   background-color: #F0F2EB;}
@@ -77,7 +77,7 @@ h3{
 .footer {
   padding-top: 5px;
   padding-bottom: 5px;
-  font-family: 'Alegreya Sans SC';    
+  font-family: 'Alegreya Sans SC';
   background-color: #76615E;
   position: fixed;
   width: 100%;
@@ -87,7 +87,7 @@ h3{
 }
 a:link, a:hover, a:visited, a:active {
    text-decoration: none;
-   color: #D4D6D1; 
+   color: #D4D6D1;
       }
 @media all and (max-width:30em){
  a.boton{
@@ -95,8 +95,8 @@ a:link, a:hover, a:visited, a:active {
   width:100% !important;
   font-size:18px !important;
  }
-}           
- 
+}
+
 @media only screen and (min-width:401px) and max-width:960px){
   /* For tablets: */
   .main {
@@ -113,25 +113,25 @@ a:link, a:hover, a:visited, a:active {
     width: 100%;
   }
 }
-      
+
   </style>
   </head>
-      
+
    <body>
      <div>
      <h1>Panel de Control</h2>
      </div>
-     
+
      <div>
        <h2>Control de luces</h2>
      </div>
-    
+
         <center><div class="quote">
   <p>Estos botones representan comandos. Presiona los botones para encender/apagar las luces.</p>
           </center></div></br></br><br>
-     
+
      <div><center>
-       <a class="boton"  href="/lucesOn">Encendido</a>               
+       <a class="boton" onclick="prenderLuz()">Encendido</a>
        <a class="boton" href="/lucesOff">Apagado</a>
 
        </div></center></br></br></br></br></br>
@@ -139,6 +139,15 @@ a:link, a:hover, a:visited, a:active {
 <div class="footer">
   <p>Este proyecto fue creado por IoTeam</p>
 </div>
-
+<script>
+  function prenderLuz(){
+    console.log("se apreto el boton");
+    fetch('/lucesOn', {
+	     method: 'POST',
+     }).then(function() {
+       console.log("respuesta");
+     });
+}
+</script>
   </body>
 </html>
