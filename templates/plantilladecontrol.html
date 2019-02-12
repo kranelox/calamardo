@@ -161,7 +161,7 @@ function apagarLuz(){
 
 setInterval(function(){
   sensorTemp()
-},10000)
+},20000)
 
 function sensorTemp(){
   fetch('/temperatura',{
@@ -174,11 +174,12 @@ function sensorTemp(){
     let temp = document.getElementById('temp');
     let hume = document.getElementById('hume');
 
-    temp.innerHTML = result.temperatura
-    hume.innerHTML = result.humedad
+    temp.innerHTML = result.temperatura;
+    hume.innerHTML = result.humedad;
 
   })
 }
+sensorTemp();
 </script>
   </body>
 </html>
