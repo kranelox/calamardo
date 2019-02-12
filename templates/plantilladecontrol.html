@@ -132,7 +132,7 @@ a:link, a:hover, a:visited, a:active {
 
      <div><center>
        <a class="boton" onclick="prenderLuz()">Encendido</a>
-       <a class="boton" onclick="apagarLuz">Apagado</a>
+       <a class="boton" onclick="apagarLuz()">Apagado</a>
 
        </div></center></br></br></br></br></br>
 <div class="footer">
@@ -149,7 +149,7 @@ a:link, a:hover, a:visited, a:active {
 }
 function apagarLuz(){
   console.log("se apreto el boton");
-  fetch('/lucesOn', {
+  fetch('/lucesOff', {
      method: 'GET',
    }).then(function() {
      console.log("respuesta");
