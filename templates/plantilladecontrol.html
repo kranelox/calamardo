@@ -142,7 +142,7 @@ a:link, a:hover, a:visited, a:active {
   function prenderLuz(){
     console.log("se apreto el boton");
     fetch('/lucesOn', {
-	     method: 'POST',
+	     method: 'GET',
      }).then(function() {
        console.log("respuesta");
      });
