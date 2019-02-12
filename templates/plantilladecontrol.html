@@ -133,27 +133,51 @@ a:link, a:hover, a:visited, a:active {
      <div><center>
        <a class="boton" onclick="prenderLuz()">Encendido</a>
        <a class="boton" onclick="apagarLuz()">Apagado</a>
-
-       </div></center></br></br></br></br></br>
+    </div></center>
+      <div>
+         <p>Temperatura: <span id='temp'></span>°c</p>
+         <p>Humedad: <span id='hume'></span>%</p>
+       </div>
+    </br></br></br></br></br>
 <div class="footer">
   <p>Este proyecto fue creado por IoTeam</p>
 </div>
 <script>
   function prenderLuz(){
-    console.log("se apreto el boton");
+
     fetch('/lucesOn', {
 	     method: 'GET',
      }).then(function() {
-       console.log("respuesta");
+
      });
-}
+   }
 function apagarLuz(){
-  console.log("se apreto el boton");
   fetch('/lucesOff', {
      method: 'GET',
    }).then(function() {
-     console.log("respuesta");
+
    });
+}
+
+setInterval(function(){
+  sensorTemp()
+},10000)
+
+function sensorTemp(){
+  fetch('/temperatura',{
+    method: 'GET',
+  }).then(function (response) {
+    return response.json();
+  }).then(function (result) {
+    console.log(result.temperatura)
+
+    let temp = document.getElementById('temp');
+    let hume = document.getElementById('hume');
+
+    temp.innerHTML = result.temperatura
+    hume.innerHTML = result.humedad
+
+  })
 }
 </script>
   </body>
