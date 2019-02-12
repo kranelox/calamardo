@@ -14,7 +14,7 @@ def luzPrendida():
 def luzApagada():
     gpio.output(led1,False)
     
-
+"""
 while True:
     gpio.output(led1,True)
     print ("apagado")
@@ -22,3 +22,5 @@ while True:
     gpio.output(led1,False)
     print ("encendido")
     sleep(1)
+
+"""

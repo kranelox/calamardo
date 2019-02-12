@@ -1,19 +1,18 @@
 from flask import Flask
 from flask import render_template
-from luces import luzApagada, luzPrendida
-import RPi.GPIO as gpio           
-from time import sleep
+import luces 
 
 app = Flask(__name__)
 @app.route('/')
 def inicio():
-    return render_template('plantilladecontrol.html')
+    return render_template("plantilladecontrol.html")
 
 @app.route('/lucesOn')
 def encederLuces():
-    luzPrendida()
-
+    luces.luzPrendida()
+    return render_template("plantilladecontrol.html")
+    
 @app.route('/lucesOff')
-def encederLuces():
-    luzApagada()
-
+def apagarLuces():
+    luces.luzApagada()
+    return render_template("plantilladecontrol.html")
