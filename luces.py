@@ -1,4 +1,4 @@
-import RPi.GPIO as gpio           
+import RPi.GPIO as gpio
 from time import sleep
 
 
@@ -13,14 +13,11 @@ def luzPrendida():
 
 def luzApagada():
     gpio.output(led1,False)
-    
-"""
-while True:
-    gpio.output(led1,True)
-    print ("apagado")
-    sleep(1)
-    gpio.output(led1,False)
-    print ("encendido")
-    sleep(1)
 
-"""
+# while True:
+#     gpio.output(led1,True)
+#     print ("apagado")
+#     sleep(1)
+#     gpio.output(led1,False)
+#     print ("encendido")
+#     sleep(1)
