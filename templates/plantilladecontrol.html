@@ -125,6 +125,7 @@
           
               <a class="boton" onclick="prenderLuz()">ENCENDIDO</a>
               <a class="boton" onclick="apagarLuz()">APAGADO</a></br></br></br>
+
           <div class="box">
                   <p>Temperatura: <span id='temp'></span>°c</p>
             <p>Humedad: <span id='hume'></span>%</div></p></br>
@@ -138,6 +139,11 @@
                  <button class="boton">
               <span>ESPECIFICO</span>
               </button></br></br>
+
+
+<h3>CONTROL VENTILADOR</h3></br>
+              <a class="boton" onclick="prenderVentilador()">ENCENDIDO</a>
+              <a class="boton" onclick="apagarVentilador()">APAGADO</a>
               </div>
           
           
@@ -169,6 +175,18 @@
              }).then(function() {
              });
           }
+          function prenderVentilador(){
+              fetch('/ventiladorOn', {
+                   method: 'GET',
+               }).then(function() {
+               });
+             }
+          function apagarVentilador(){
+            fetch('/ventiladorOff', {
+               method: 'GET',
+             }).then(function() {
+             });
+          }
           setInterval(function(){
             sensorTemp()
           },20000)
@@ -187,5 +205,7 @@
           }
           sensorTemp();
           </script>
+
+
       </body>
     </html>
