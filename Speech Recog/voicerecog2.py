@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import requests
+import unidecode
 
 r = sr.Recognizer()
 mic = sr.Microphone()
@@ -12,7 +13,7 @@ while True:
         audio = r.listen(source)
 
     you_said2 = r.recognize_google(audio_data=audio, language="es")
-    you_said2 = you_said2.lower() #convierte el texto todo a lowercase
+    you_said2 = unidecode.unidecode(you_said2.lower()) #convierte el texto todo a lowercase y sin acentos
     print(you_said2)
 
     if "alex" in you_said2 or "pepit" in you_said2:

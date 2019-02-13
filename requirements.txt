@@ -3,3 +3,4 @@ RPi.GPIO==0.6.5
 Adafruit-DHT==1.4.0
 SpeechRecognition
 PyAudio
+unidecode
