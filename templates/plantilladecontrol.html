@@ -4,10 +4,10 @@
       <link href='https://fonts.googleapis.com/css?family=Carrois Gothic SC' rel='stylesheet'>
       <link href='https://fonts.googleapis.com/css?family=Noto Serif SC' rel='stylesheet'>
         <title>ALEXE</title>
-
+        
       <style>
           body{
-            background-color: #EDEBE6;}
+            background-color: #EDEBE6;} 
           p  {
             font-family: 'Carrois Gothic SC';
             color: #070001;
@@ -88,7 +88,7 @@
             grid-column: 1;
             grid-row: 1;
           }
-          .two {
+          .two { 
             grid-column: 3;
             grid-row: 1 / 3;
           }
@@ -110,44 +110,32 @@
           }
           a:link, a:hover, a:visited, a:active {
              text-decoration: none;
-             color: #070001;
+             color: #070001; 
                 }
       </style>
       </head>
-
+          
        <body>
         <div class="wrapper">
             <div class="one"></br></br></br></br></br></br>
               <h1>ALEXE</h1></div>
-
+          
             <div class="two"><h3>CONTROL DE LUZ</h3>
               <p>Presione los botones para encender/apagar la luz.</p></br>
-
+          
               <a class="boton" onclick="prenderLuz()">ENCENDIDO</a>
               <a class="boton" onclick="apagarLuz()">APAGADO</a></br></br></br>
 
           <div class="box">
                   <p>Temperatura: <span id='temp'></span>°c</p>
             <p>Humedad: <span id='hume'></span>%</div></p></br>
-          <p>Presione los botones para controlar los modos en que se enciende luz.</br></br>
-          <div class="quote"><p>"ALEATORIO" = Luces al azar.</br></br>
-          "ESPECIFICO" = Elegir las luces.</p></div></br></br>
-          <button class="boton">
-              <span>ALEATORIO</span>
-          </button>
 
-                 <button class="boton">
-              <span>ESPECIFICO</span>
-              </button></br></br>
-
-
-<h3>CONTROL VENTILADOR</h3></br>
-              <a class="boton" onclick="prenderVentilador()">ENCENDIDO</a>
-              <a class="boton" onclick="apagarVentilador()">APAGADO</a>
-              </div>
-
-
-
+            <h3>CONTROL VENTILADOR</h3>
+          <p>Presione los botones para encender/apagar el ventilador.</p></br>
+            <a class="boton" onclick="prenderVentilador()">ENCENDIDO</a>
+            <a class="boton" onclick="apagarVentilador()">APAGADO</a>
+            </div>
+          
           <div class="five">
               <p>La creación de Hogares Inteligentes está hoy</br>
                  en día al alcance de nuestras manos.</br>
@@ -155,13 +143,13 @@
           _________________________</br>
           <small>Este proyecto fue creado por IoTEAM</small>
               </div>
-
+          
             <class="six"><h3></h3>
-
+          
               </div>
-
+          
           </div>
-
+    
           <script>
             function prenderLuz(){
               fetch('/lucesOn', {
