@@ -24,3 +24,6 @@ def tempe_hum():
     temp, hum = pepite_sensor.sens_temp_hum() #se cambia las variables para separar los valores del sensor
     valores = {"temperatura":temp, "humedad":hum} #se crea diccionario con los valores del sensor
     return jsonify(valores) #se utiliza la función jsonify de flask
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
