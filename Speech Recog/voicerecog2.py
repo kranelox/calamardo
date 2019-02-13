@@ -23,7 +23,9 @@ if "alex" in you_said2:
         requests.get("http://localhost:5000/lucesOff")
     elif "encende" in you_said2 and "ventilador" in you_said2:
         print("entré en encender ventilador")
+        requests.get("http://localhost:5000/ventiOn")
     elif "apagar" in you_said2 and "ventilador" in you_said2:
         print("entré en apagar ventilador")
+        requests.get("http://localhost:5000/ventiOff")
     else:
         print("habla bien carajo!")
