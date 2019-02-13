@@ -19,6 +19,16 @@ def apagarLuces():
     luces.luzApagada()
     return render_template("plantilladecontrol.html")
 
+@app.route('/ventiOn')
+def encenderVenti():
+    luces.ventiPrendido()
+    return render_template("plantilladecontrol.html")
+
+@app.route('/ventiOff')
+def apagarVenti():
+    luces.ventiApagado()
+    return render_template("plantilladecontrol.html")
+
 @app.route('/temperatura')
 def tempe_hum():
     temp, hum = pepite_sensor.sens_temp_hum() #se cambia las variables para separar los valores del sensor
