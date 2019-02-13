@@ -1,4 +1,6 @@
 import speech_recognition as sr
+import requests
+
 r = sr.Recognizer()
 mic = sr.Microphone()
 
@@ -8,9 +10,10 @@ with mic as source:
     audio = r.listen(source)
 
 you_said2 = r.recognize_google(audio_data=audio, language="es")
+you_said2 = you_said2.lower() #
 print(you_said2)
 
-if "Alex" in you_said2:
+if "alex" in you_said2:
     print("entré en Alexe")
     if "encende" in you_said2 and "luces" in you_said2:
         print("entré en encender luz")
